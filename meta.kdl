@@ -1,0 +1,11 @@
+title        "gtlds"
+description  "sort .TLD's by length and price"
+media-type   "webpage"
+tags         "tld"  "js"  "sort"  "table"  "ui"
+license      "AGPL"
+homepage     "https://dym.sh/tld"
+source
+
+mirrors {
+  codepen  "https://codepen.io/dym-sh/pen/poaKXox"
+}
