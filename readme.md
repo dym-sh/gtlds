@@ -13,7 +13,7 @@
 
 
 3. wait until [`results.csv`](results.csv) is downloaded
-4. copy-paste its contents into the first text-area on the [gh-page](https://dym-sh.github.io/tld/)
+4. copy-paste its contents into the first text-area on the [webpage](https://dym.sh/gtlds/)
 
 ![screenshot](screenshot.png)
 
