@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <meta charset="utf8" />
 <title>{short,cheap}.gTLD's</title>
+
+<meta name="description"         content="sort .gTLD's by length and price">
+<meta property="og:description"  content="sort .gTLD's by length and price">
+<meta property="og:title"        content="{short,cheap}.gTLD's">
+<meta property="og:site_name"    content="Dym Sohin">
+<meta property="og:type"         content="article">
+<meta property="og:url"          content="https://dym.sh/gtlds/">
+<meta property="og:image"        content="https://dym.sh/gtlds/th.png">
+<meta property="og:logo"         content="https://dym.sh/icon.png">
+<meta name="twitter:card"        content="summary_large_image">
+
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport"    content="width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link sizes="128x128" href="https://dym.sh/favicon.ico" type="image/png" rel="shortcut icon">
+<link sizes="500x500" href="https://dym.sh/icon.png"    type="image/png" rel="icon">
+<link sizes="500x500" href="https://dym.sh/icon.png"    type="image/png" rel="apple-touch-icon">
+
+<link rel="alternate" type="application/rss+xml" title="global feed"  href="https://dym.sh/rss">
+
 <style>
 label
 { cursor: pointer }
@@ -612,29 +634,40 @@ Array.prototype.unique =
 
 const price_brackets = [ 10, 20, 50, 100, 250, 500, 1000, 5000, 10_000, 100_000 ]
     , handshake =
-        [ '0db', '1', '247', '3dom', '4sale', '80proof', '8888', 'ags', 'albums', 'aotearoa'
-        , 'apartment', 'api', 'articles', 'ath', 'augmented', 'bakes', 'base', 'beach', 'beef'
-        , 'blockchaindapps', 'boredapes', 'brand', 'brokers', 'btk9', 'c', 'c0m', 'cabins'
-        , 'cardcollector', 'cerrajero', 'citizenship', 'coffees', 'comic', 'comics', 'commerce'
-        , 'consultancy', 'crazy', 'creations', 'creator', 'cryptocum', 'dan', 'de3', 'defi'
-        , 'degen', 'den', 'diva', 'doge', 'dookie', 'dweb', 'economics', 'economy', 'edm', 'egame'
-        , 'elite', 'eporn', 'ero', 'estates', 'ewallet', 'exercise', 'ext', 'ez', 'fam', 'fe'
-        , 'foot', 'funnelclub', 'gengar', 'ger', 'gin', 'godefi', 'greatoffers', 'guey', 'hack'
-        , 'hermanos', 'hill', 'hire', 'hodlr', 'holding', 'holidays', 'hotelguide', 'ibn'
-        , 'ill', 'influencer', 'innovator', 'iny', 'island', 'ism', 'isthefuture', 'iurl'
-        , 'ize', 'job', 'joker', 'jpgs', 'js', 'knowledge', 'lean', 'livestreaming', 'lnx'
-        , 'logo', 'lovesyou', 'magazine', 'mansion', 'ment', 'mined', 'mke', 'mooning', 'motherboard'
-        , 'mtl', 'mycard', 'myco', 'myurl', 'nearme', 'nftcartel', 'nil', 'nom', 'often', 'oh'
-        , 'oin', 'oncam', 'onewallet', 'onlinenews', 'oo', 'oot', 'orb', 'owbo', 'p', 'pal', 'pgp'
-        , 'picture', 'pix', 'pixelpenguins', 'premium', 'prodazha', 'project', 'pspk', 'rekt'
-        , 'rogan', 'row', 'saas', 'sats', 'secrets', 'sexjournal', 'shot', 'sox', 'squirtfiesta'
-        , 'src', 'ssl', 'startup', 'streamer', 'swapz', 'taughtme', 'teck', 'teepee', 'tefi', 'ter'
-        , 'thenerd', 'tni', 'token', 'tokensale', 'trader', 'troll', 'tuber', 'tx', 'txt', 'ud'
-        , 'uge', 'uk3', 'ultimate', 'uorg', 'us3', 'use', 'valley', 'viewnow', 'visit', 'vlog'
-        , 'voice', 'vrmmo', 'vvip', 'w33d', 'w3b', 'wave', 'web4', 'webdesigner', 'x2', 'xn--5o8h'
-        , 'xn--6ca', 'xn--dei', 'xn--dp8h', 'xn--e77hhb', 'xn--g6h', 'xn--go-nz82a', 'xn--pei'
-        , 'xn--rci', 'xr', 'xxxx', 'year', 'yo', 'yol', 'yolo', 'yummy', 'yzx', 'zen', 'zug'
-        ]
+        `0db 0z 1 1d 1q 247 35 3dom 49 4free 4k 4sale 4you 80proof 8888 8s abo aboutme aby aca addme adlt advisor afam afz ags
+        agua ahoy aj albums alto amg amigo amor ane annex aotearoa apartment api arbitrator artesanal articles artificial
+        assurances atc ath atwork augmented b2b baas badly bakes base batch beach beef bem biometric bitcoinfund bizdata bizdev
+        blockchaindapps blogging bmp bob bog booked boredapes bqw brand brewery brokers browsers btk9 btt buddhist buyaflat byn
+        c c0m c4 cabins cardcollector cares catgirl causes cerrajero cheddar cism cita citizenship ckq clc clic client clients
+        cliq cloudbot cm3 cn3 co3 codeschool coffees coinnet comic comics commerce communion complete computers concise conduct
+        conductor conf connectors connoisseur consultancy cork corporation crazy creations creativity creator crew croatia cryp
+        cryptobets cryptocum cryptogamer cryptoservice cuba cycle cyprus d5 d8 dais damn dan datamining daytrade dco de3 dean
+        debtless decent decentralize defi deficit degen den detour development dg dh dids digitalasset dilate directive
+        discounts discussion diva dlt dly doge dogecoin dojo dolls doma dookie douchebag down downloads ds ducktape duration dvd
+        dweb dweb3 dy eathere economics economy edm egame elect electronics elite emj engaged ep eporn ero estates eternity
+        etickets event ewallet ewx executive exercise ext exu eyecare ez fak fam faqs fcb fd fe feeling fej fellowship ffa fgz
+        fia fiat2btc fiji filters financialnews findme firstname fl3x flat fmw follow foot forall fore freebies fua fundraising
+        funnelclub fw fwd gad gadget gdl gengar ger gethigh getreal getwell gic gin giveaways godefi gofor gon gonow goth go🚀
+         grandmaster greatoffers grow gruppen guey guidance guz gvz gyc gzp hack hackathon hae hah haiti hardrive hb heh hell
+         helpdesk hem hermanos hf hgo hill hire hits hodlr holding holidayrental holidays hometown horny hotelguide hpp hsu hx i1
+        ib ibn ieh ifv ih ik ill iloveu income influencer information inh innovator interest intro iny ioi ioo island ism
+        isthefuture italy iuh iurl iw ize ja january jao jeh jf job jok joker jov jpg jpgs js jub jugar jun jy kcx kennel keys
+        kf kicks kinetic kip kj kl knight knowledge kq ks kv l33t lars lausanne lawexpert lawoffice lawsuit lean legendary
+        likeapro lingo livestreaming ljb lli lnx lo logo lord lov lovesyou lw lyf lz maestro magazine mansion mediator medico
+        mee ment merc mev micro mined mission mke moar mommy montage mooning motherboard mtl mvo mwallet mycard myco myo myproxy
+        myurl nah napavalley nearme neo nerdy nftcartel nfts nil nod nom notes nouns npm nuk numb nxs nym ob od oda oflinewallet
+        often oh ohmy oin oncam onewallet onlinenews oo oof oot optimize oq orb oslo ot oun owbo p paid pal pave pdcst performer
+        pest pgp picture pier pix pixelpenguins piz places plaza ply pockets poj policeman ppp praha premio premium presenter
+        prices profiles project pspk pui pun pv pz qd qf qg qh qk qn qo queens qum qy rekt remember researcher resources rh
+        rican rl rn rogan row rpgs rumor runs rural russo rust rz saas sales samples sats say schooling sds secrets semi sexblog
+        sexjournal sharing shark shizzle shoppingcart shortcut shot shp sig simp simplicity sniff solution sos southafrican sox
+        spac specs squirtfiesta src ssl startup streamer sus swapz tao tar taughtme taxfree techblog teck teenager teepee tefi
+        ter thenerd tni token tokensale trader trans trekking tricks troll tuber turtles tutorial tx txt u2 ud ue uf uge uk3
+        ultimate umo underground underworld unit universe unlock uorg us3 use uui uzr valley vase vie viewer viewnow visit vj
+        vlog vq vrmmo vuo vvip w33d w3b w8 wasabi wave wc we3 web4 webartist webdesigner websites wh whitepaper wj wl won
+        worldtour wq wr wt x00m x2 xa xb xc xcam xf xg xi xk xq xr xxxx yb yd year yh yj yo yol yolo yq yummy yx yzx zc zen zh
+        zoy zp zs zug zx zy æ ♥ ✟ ❗ ❣ 🇺🇦 🐱 🐸
+        `.split(/\s+/)
         // https://www.namecheap.com/support/knowledgebase/article.aspx/10484/2278/namecheap-handshake-tlds/
 
 
